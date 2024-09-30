@@ -1,26 +1,25 @@
 
-// Pattern 2
+// Pattern 3
 
-public class Pattern {
+public class Main {
     public static void main(String[] args) {
-        int n = 5;
+        int n = 4;
+        int sum = 0;
 
-        int temp = 1;
-        int startValue = 1;
-
-        // Outer loop for rows
-        for (int i = 1; i <= n; i++) {
-            temp = startValue;
-
-            // Inner loop for columns
-            for (int j = 1; j <= n - i + 1; j++) {
-                System.out.print(temp + " ");
-                temp = temp + (i + j);
+        for (int i = 0; i < n; i++) {
+            int temp = sum + n;  // For odd rows, we will use this for decrementing
+            
+            // Use (i % 2) to determine whether to increment or decrement
+            for (int j = 0; j < n; j++) {
+                // When i is odd (1), it decrements; when even (0), it increments
+                System.out.print((i % 2 == 0 ? ++sum : temp--) + " ");
             }
+            // Update sum for the next row if the current row is odd
+            sum += (i % 2 == 0) ? 0 : n; // Increment sum only for even rows
 
-            // Update the startValue for the next row
-            startValue = startValue + i;
             System.out.println();
         }
+        
     }
 }
+
