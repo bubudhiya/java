@@ -1,10 +1,8 @@
-
 public class Pattern {
     public static void main(String[] args) {
-        int n = 5;
-        
-        int temp = 1;
+        int n = 3;
         int startValue = 1;
+        int temp;
 
         // Outer loop for rows
         for (int i = 1; i <= n; i++) {
@@ -13,23 +11,16 @@ public class Pattern {
 
             // Inner loop for columns
             for (int j = 1; j <= n; j++) {
-                if (i + j > n + 1) {
-                    temp = temp + bottom;
-                    System.out.print(temp + " ");
-                    bottom--;
-                } else {
-                    System.out.print(temp + " ");
-                    temp = temp + (i + j);
-                }
+                // Calculate the increment without conditions
+                int increment = (i + j <= n + 1) ? (i + j) : bottom--;
 
-                if (i + j == n + 1) {
-                    temp = temp - (i + j);
-                }
+                // Print the current value and update temp
+                System.out.print(temp + " ");
+                temp += increment;
             }
 
-            // Update the startValue for the next row
-            startValue = startValue + i;
-            bottom = n;
+            // Update startValue for the next row
+            startValue += i;
             System.out.println();
         }
     }
