@@ -3,7 +3,7 @@ public class Main {
         int n = 4;
         int sum = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n-1; i++) {
             int temp = sum + n;  // For odd rows, we will use this for decrementing
             
             // Use (i % 2) to determine whether to increment or decrement
