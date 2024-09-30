@@ -1,2 +1,17 @@
+ithu correct ila na vera podren ipothaiku itha vachika
 
-1 minute wait
+public class Pattern {
+    public static void main(String[] args) {
+        int n = 3; // Size of the pattern
+        int num = 1;
+
+        // Loop through the rows
+        for (int row = 1; row <= n; row++) {
+            // Loop through the columns
+            for (int col = 1; col <= n; col++) {
+                System.out.print((row + (col - 1) * n) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
